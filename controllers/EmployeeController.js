@@ -32,7 +32,7 @@ const createEmployee = async (req, res) => {
 
   // add to the database
   try {
-    const employee = await EmployeeModel.create({ name, nic, address });
+    const employee = await EmployeeModel.create({ name, nic, address, salary });
     res.status(200).json(employee);
   } catch (error) {
     res.status(400).json({ error: error.message });
