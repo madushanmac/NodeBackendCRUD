@@ -16,6 +16,10 @@ const employeeSchema = new Schema(
       type: String,
       required: true,
     },
+    salary: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );

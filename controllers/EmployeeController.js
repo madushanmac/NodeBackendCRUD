@@ -28,7 +28,7 @@ const getEmployee = async (req, res) => {
 
 // create a new workout
 const createEmployee = async (req, res) => {
-  const { name, nic, address } = req.body;
+  const { name, nic, address, salary } = req.body;
 
   // add to the database
   try {
