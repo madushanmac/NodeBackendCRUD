@@ -9,7 +9,7 @@ const employeeSchema = new Schema(
       required: true,
     },
     nic: {
-      type: Number,
+      type: String,
       required: true,
     },
     address: {
