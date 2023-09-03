@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const cors = require('cors')
 const express = require("express");
 const mongoose = require("mongoose");
 const emoloyeeRoutes = require("./routes/employeeRoutes");
@@ -7,6 +8,8 @@ const dataRoutes = require("./routes/dataRoutes");
 
 // express app
 const app = express();
+
+app.use(cors());
 
 // middleware
 app.use(express.json());
@@ -18,7 +21,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use("/api/employees", emoloyeeRoutes);
-app.use("/api/data", dataRoutes);
+
 
 // connect to db
 mongoose
