@@ -64,11 +64,12 @@ const updateEmployee = async (req, res) => {
     return res.status(400).json({ error: "No such employee" });
   }
 
-  const employee = await EmployeeModel.findOneAndUpdate(
+  const employee = await EmployeeModel.findByIdAndUpdate(
     { _id: id },
     {
       ...req.body,
-    }
+    },
+    {new: true}
   );
 
   if (!employee) {
