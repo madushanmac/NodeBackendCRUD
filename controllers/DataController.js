@@ -64,11 +64,13 @@ const updateData = async (req, res) => {
     return res.status(400).json({ error: "No such Data" });
   }
 
-  const data = await DataModel.findOneAndUpdate(
+  const data = await DataModel.findByIdAndUpdate(
     { _id: id },
     {
       ...req.body,
-    }
+      
+    },
+    {new: true}
   );
 
   if (!data) {
